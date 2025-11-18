@@ -9,9 +9,9 @@ interface MainLayoutProps {
 
 const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   return (
-    <div className="main-layout">
+    <div className="flex min-h-screen flex-col">
       <Header />
-      <main className="main-content">
+      <main className="flex-1">
         {children}
       </main>
       <Footer />

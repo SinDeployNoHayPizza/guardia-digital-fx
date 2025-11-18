@@ -3,7 +3,8 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import Card from '@/components/ui/Card';
+import Card from '../ui/Card';
+import { Button } from '../ui/button';
 
 interface ServiceCardProps {
   title: string;
@@ -35,9 +36,9 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, price, asunto }) => {
         title={title}
         price={price}
         actions={[
-          <button key="request-btn" onClick={handleRequest}>
+          <Button key="request-btn" onClick={handleRequest} className="w-full">
             Iniciar solicitud
-          </button>,
+          </Button>,
         ]}
       >
         {/* Additional content for the service card can go here */}

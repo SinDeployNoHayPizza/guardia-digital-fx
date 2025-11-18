@@ -5,13 +5,13 @@ import * as React from "react";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes"; // I will use next-themes for this
 
-import { Button } from "@/components/ui/button"; // I will need to create this component with shadcn
+import { Button } from "./button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"; // I will need to create this component with shadcn
+} from "./dropdown-menu";
 
 export function ModeToggle() {
   const { setTheme } = useTheme();

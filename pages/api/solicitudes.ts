@@ -1,6 +1,6 @@
 // pages/api/solicitudes.ts
 import { NextApiRequest, NextApiResponse } from 'next';
-import { solicitudSchema } from '@/lib/schemas';
+import { solicitudSchema } from "../../lib/schemas";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {

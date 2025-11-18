@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { Button } from "@/app/components/ui/button";
+import { Button } from "../ui/button";
 import {
   Form,
   FormControl,
@@ -15,18 +15,18 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/app/components/ui/form";
-import { Input } from "@/app/components/ui/input";
+} from "../ui/form";
+import Input from "../ui/Input";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/app/components/ui/select";
-import { Textarea } from "@/app/components/ui/textarea";
+} from "../ui/Select";
+import { Textarea } from "../ui/textarea";
 
-import { Checkbox } from "@/app/components/ui/checkbox";
+import { Checkbox } from "../ui/checkbox";
 import { SERVICES } from "@/data/services";
 import { solicitudSchema } from "@/lib/schemas";
 
@@ -43,7 +43,7 @@ export function ContactForm() {
       email: "",
       country: "",
       description: "",
-      acceptPrivacy: false,
+      acceptPrivacy: true,
     },
   });
 
@@ -66,7 +66,7 @@ export function ContactForm() {
 
       setSubmitStatus("success");
       form.reset();
-    } catch (error) {
+    } catch (_error) {
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
@@ -188,7 +188,7 @@ export function ContactForm() {
             <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4">
               <FormControl>
                 <Checkbox
-                  checked={field.value}
+                  checked={!!field.value}
                   onCheckedChange={field.onChange}
                 />
               </FormControl>

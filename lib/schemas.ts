@@ -19,6 +19,6 @@ export const solicitudSchema = z.object({
   }),
   urgency: z.enum(['Alta','Media','Baja']),
   acceptPrivacy: z.literal(true, {
-    errorMap: () => ({ message: "You must accept the privacy policy." }),
+    message: "You must accept the privacy policy.",
   }),
 });
