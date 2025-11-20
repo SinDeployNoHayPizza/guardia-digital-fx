@@ -14,13 +14,13 @@ interface Particle {
 
 const WebGLEffect: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const animationFrameRef = useRef<number>();
+  const animationFrameRef = useRef<number>(0);
   const mouseRef = useRef({ x: 0, y: 0 });
-  const [isClient, setIsClient] = useState(false);
+  const [isClient] = useState(true);
 
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
+  // useEffect(() => {
+  //   setIsClient(true);
+  // }, []);
 
   useEffect(() => {
     if (!isClient || !canvasRef.current) return;

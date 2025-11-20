@@ -6,7 +6,7 @@ import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
 
 // Lazy load WebGL effect
-const WebGLEffect = dynamic(() => import('./WebGLEffect'), { 
+const WebGLEffect = dynamic(() => import('./WebGLEffect'), {
   ssr: false,
   loading: () => null
 });
@@ -25,7 +25,7 @@ const Hero: React.FC = () => {
 
   // Animación con clip-path reveal para el título
   const titleVariants = {
-    hidden: { 
+    hidden: {
       clipPath: 'inset(0 100% 0 0)',
       opacity: 0,
     },
@@ -41,7 +41,7 @@ const Hero: React.FC = () => {
 
   // Subtítulo con micro-delay
   const subtitleVariants = {
-    hidden: { 
+    hidden: {
       y: 30,
       opacity: 0,
       scale: 0.95,
@@ -60,7 +60,7 @@ const Hero: React.FC = () => {
 
   // CTA con micro-delay y animación de entrada
   const ctaVariants = {
-    hidden: { 
+    hidden: {
       y: 30,
       opacity: 0,
       scale: 0.9,
@@ -80,7 +80,7 @@ const Hero: React.FC = () => {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* CSS Fallback Background con animación */}
-      <motion.div 
+      <motion.div
         className="absolute inset-0 z-0 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700"
         initial={{ scale: 1.1, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
@@ -98,25 +98,25 @@ const Hero: React.FC = () => {
       >
         <div className="container mx-auto">
           {/* Título con clip-path reveal */}
-          <motion.h1 
+          <motion.h1
             className="text-5xl md:text-7xl font-bold mb-6 text-white drop-shadow-lg"
-            variants={titleVariants}
+          // variants={titleVariants}
           >
             Guardia Digital
           </motion.h1>
 
           {/* Subtítulo con micro-delay */}
-          <motion.p 
+          <motion.p
             className="text-xl md:text-2xl mb-10 text-white/90 drop-shadow-md max-w-2xl mx-auto"
-            variants={subtitleVariants}
+          // variants={subtitleVariants}
           >
             Protegiendo tu presencia digital con tecnología de vanguardia.
           </motion.p>
 
           {/* CTA con micro-delay y animación */}
-          <motion.button 
+          <motion.button
             className="cta-button bg-white text-blue-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition-all shadow-lg hover:shadow-xl"
-            variants={ctaVariants}
+            // variants={ctaVariants}
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.98 }}
           >
