@@ -4,6 +4,14 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
+import { cn } from '@/lib/utils';
+import { Orbitron, Bruno_Ace, Bruno_Ace_SC } from 'next/font/google';
+
+
+const orbitron = Orbitron({
+  variable: "--font-orbitron",
+  weight: "900"
+});
 
 // Lazy load WebGL effect
 const WebGLEffect = dynamic(() => import('./WebGLEffect'), {
@@ -81,7 +89,7 @@ const Hero: React.FC = () => {
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* CSS Fallback Background con animación */}
       <motion.div
-        className="absolute inset-0 z-0 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700"
+        className="absolute inset-0 z-0 bg-linear-to-br from-blue-600 via-purple-600 to-indigo-700"
         initial={{ scale: 1.1, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
@@ -99,7 +107,7 @@ const Hero: React.FC = () => {
         <div className="container mx-auto">
           {/* Título con clip-path reveal */}
           <motion.h1
-            className="text-5xl md:text-7xl font-bold mb-6 text-white drop-shadow-lg"
+            className={cn("text-5xl md:text-7xl font-bold mb-6 text-white drop-shadow-lg", orbitron.className)}
           // variants={titleVariants}
           >
             Guardia Digital
