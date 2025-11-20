@@ -2,6 +2,13 @@
 import React from 'react';
 import Link from 'next/link';
 import { Shield } from 'lucide-react';
+import { Orbitron } from 'next/font/google';
+import { cn } from '@/lib/utils';
+
+const orbitron = Orbitron({
+  variable: "--font-orbitron",
+  weight: "400"
+});
 
 const Footer: React.FC = () => {
   return (
@@ -12,7 +19,7 @@ const Footer: React.FC = () => {
           <div className="footer-section about">
             <div className="flex items-center gap-2 mb-4">
               <Shield className="h-6 w-6 text-primary" />
-              <h3 className="text-xl font-semibold text-white">Guardia Digital</h3>
+              <h3 className={cn("text-xl font-semibold text-white", orbitron.className)}>Guardia Digital</h3>
             </div>
             <p className="text-slate-400">Protegiendo tu presencia digital con tecnología de vanguardia.</p>
           </div>
@@ -66,9 +73,9 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-semibold text-white mb-4">Síguenos</h3>
             <div className="social-links flex flex-col gap-2">
               {process.env.NEXT_PUBLIC_TWITTER_URL && (
-                <a 
-                  href={process.env.NEXT_PUBLIC_TWITTER_URL} 
-                  target="_blank" 
+                <a
+                  href={process.env.NEXT_PUBLIC_TWITTER_URL}
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="text-slate-400 hover:text-white transition-colors"
                 >
@@ -76,9 +83,9 @@ const Footer: React.FC = () => {
                 </a>
               )}
               {process.env.NEXT_PUBLIC_LINKEDIN_URL && (
-                <a 
-                  href={process.env.NEXT_PUBLIC_LINKEDIN_URL} 
-                  target="_blank" 
+                <a
+                  href={process.env.NEXT_PUBLIC_LINKEDIN_URL}
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="text-slate-400 hover:text-white transition-colors"
                 >
@@ -86,9 +93,9 @@ const Footer: React.FC = () => {
                 </a>
               )}
               {process.env.NEXT_PUBLIC_INSTAGRAM_URL && (
-                <a 
-                  href={process.env.NEXT_PUBLIC_INSTAGRAM_URL} 
-                  target="_blank" 
+                <a
+                  href={process.env.NEXT_PUBLIC_INSTAGRAM_URL}
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="text-slate-400 hover:text-white transition-colors"
                 >
@@ -101,7 +108,7 @@ const Footer: React.FC = () => {
 
         {/* Bottom Section */}
         <div className="footer-bottom border-t border-slate-700/50 pt-8 text-center text-slate-400">
-          <p>&copy; {new Date().getFullYear()} Guardia Digital. Todos los derechos reservados.</p>
+          <p>&copy; {new Date().getFullYear()} <span className={orbitron.className}>Guardia Digital</span>. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>
