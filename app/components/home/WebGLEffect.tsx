@@ -18,10 +18,6 @@ const WebGLEffect: React.FC = () => {
   const mouseRef = useRef({ x: 0, y: 0 });
   const [isClient] = useState(true);
 
-  // useEffect(() => {
-  //   setIsClient(true);
-  // }, []);
-
   useEffect(() => {
     if (!isClient || !canvasRef.current) return;
 
