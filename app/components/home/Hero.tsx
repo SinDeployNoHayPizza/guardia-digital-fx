@@ -5,7 +5,7 @@ import React from 'react';
 import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
-import { Orbitron, Bruno_Ace, Bruno_Ace_SC } from 'next/font/google';
+import { Orbitron } from 'next/font/google';
 
 
 const orbitron = Orbitron({
